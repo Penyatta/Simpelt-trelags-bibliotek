@@ -79,10 +79,10 @@ class Bibliotek {
   void laanBog(Bruger person, Bog book) {
     Laan laan = new Laan(book, person);
     udLaan.add(laan);
-    println(person.getNavn()+" har lånt: "+book.getTitel());
+    //println(person.getNavn()+" har lånt: "+book.getTitel());
   }
 
-  void afleverBog(Bog book) {
+  boolean afleverBog(Bog book) {
     Laan aktivtLaan=null;
     for (Laan laan : udLaan) {
       if (laan.getBog().equals(book)&&laan.erAktivtLaan()) {
@@ -93,18 +93,20 @@ class Bibliotek {
     if (aktivtLaan!=null) {
       aktivtLaan.afleverBog();
       udLaan.remove(aktivtLaan);
-      println(aktivtLaan.getBruger().getNavn()+" har afleveret: " + aktivtLaan.getBog().getTitel());
+      //println(aktivtLaan.getBruger().getNavn()+" har afleveret: " + aktivtLaan.getBog().getTitel());
+      return(true);
     } else {
-      println("Ingen aktive lån fundet for bogen, " + book.getTitel()+ ", " + book.getForfatter());
+      //println("Ingen aktive lån fundet for bogen, " + book.getTitel()+ ", " + book.getForfatter());
+      return(false);
     }
   }
   void tilfoejBog(Bog book) {
     bøger.add(book);
-    println("tilføjet: "+book.getTitel()+", "+book.getForfatter());
+    //println("tilføjet: "+book.getTitel()+", "+book.getForfatter());
   }
   void registrerBruger(Bruger person) {
     brugere.add(person);
-    println("tilføjet: "+person.getNavn()+", "+person.getBrugerId());
+    //println("tilføjet: "+person.getNavn()+", "+person.getBrugerId());
   }
 }
 void iniBog(Bog book) {

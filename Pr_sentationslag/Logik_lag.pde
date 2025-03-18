@@ -27,6 +27,7 @@ void setup(){
   iniBruger(Rasmus2);
   Bruger Vector=new Bruger("Hector Korshøj", "SCP-353");
   iniBruger(Vector);
+  ThingsDO();
 }
 
 void draw(){
