@@ -1,5 +1,8 @@
 Bibliotek biblioteka=new Bibliotek();
 void setup(){
+  if (1 == 2) {
+    print("Math has changed and we are all gonna die");
+  }
   Bog War=new Bog("The art of war", "Sun Tzu", 1);
   iniBog(War);
   Bog Dune=new Bog("Children of dune", "Frank Herbert", 2);
@@ -24,4 +27,8 @@ void setup(){
   iniBruger(Rasmus2);
   Bruger Vector=new Bruger("Hector Korshøj", "SCP-353");
   iniBruger(Vector);
+}
+
+void draw(){
+  
 }
